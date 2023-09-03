@@ -7,7 +7,7 @@
 import * as React from "react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
 import { LogoProps } from "./Logo";
-import { FlexProps, ImageProps, TextProps } from "@aws-amplify/ui-react";
+import { ButtonProps, FlexProps, ImageProps, TextProps } from "@aws-amplify/ui-react";
 import { MyIconProps } from "./MyIcon";
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type NavBarHeaderOverridesProps = {
@@ -16,6 +16,7 @@ export declare type NavBarHeaderOverridesProps = {
     "Frame 32129767076"?: PrimitiveOverrideProps<FlexProps>;
     "Add Pet"?: PrimitiveOverrideProps<TextProps>;
     "Frame 32129767081"?: PrimitiveOverrideProps<FlexProps>;
+    Button?: PrimitiveOverrideProps<ButtonProps>;
     MyIcon?: MyIconProps;
     image?: PrimitiveOverrideProps<ImageProps>;
 } & EscapeHatchProps;

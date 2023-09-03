@@ -8,7 +8,7 @@
 import * as React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import Logo from "./Logo";
-import { Flex, Image, Text } from "@aws-amplify/ui-react";
+import { Button, Flex, Image, Text } from "@aws-amplify/ui-react";
 import MyIcon from "./MyIcon";
 export default function NavBarHeader(props) {
   const { overrides, ...rest } = props;
@@ -91,6 +91,16 @@ export default function NavBarHeader(props) {
         padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "Frame 32129767081")}
       >
+        <Button
+          width="unset"
+          height="unset"
+          shrink="0"
+          size="small"
+          isDisabled={false}
+          variation="primary"
+          children="Sign Out"
+          {...getOverrideProps(overrides, "Button")}
+        ></Button>
         <MyIcon
           width="24px"
           height="24px"
