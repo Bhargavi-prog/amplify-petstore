@@ -76,6 +76,27 @@ export default function NavBarHeader(props) {
           children="Add Pet"
           {...getOverrideProps(overrides, "Add Pet")}
         ></Text>
+        <Text
+          fontFamily="IBM Plex Sans"
+          fontSize="24px"
+          fontWeight="700"
+          color="rgba(13,26,38,1)"
+          lineHeight="24px"
+          textAlign="left"
+          display="block"
+          direction="column"
+          justifyContent="unset"
+          width="unset"
+          height="unset"
+          gap="unset"
+          alignItems="unset"
+          shrink="0"
+          position="relative"
+          padding="0px 0px 0px 0px"
+          whiteSpace="pre-wrap"
+          children="Remove Pet"
+          {...getOverrideProps(overrides, "Remove Pet")}
+        ></Text>
       </Flex>
       <Flex
         gap="32px"

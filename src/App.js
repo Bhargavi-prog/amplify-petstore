@@ -4,6 +4,7 @@ import {  Pets  } from './ui-components';
 import {  NavBarHeader  } from './ui-components';
 import {  MarketingFooterBrand  } from './ui-components';
 import {  AddPet  } from './ui-components';
+import { Alert } from '@aws-amplify/ui-react';
  
 function App() {
   const [showForm, setShowForm] = useState(false);
@@ -31,7 +32,15 @@ function App() {
       },
     },
 
-  };
+    "Remove Pet" : {
+      style: {
+          cursor : "pointer",
+        },
+        onClick: () => {
+          Alert("Delete")
+        },
+    },
+  }
   return (
     <div className="App">
       <NavBarHeader width={"100%"} overrides={navbarOverrides} />
