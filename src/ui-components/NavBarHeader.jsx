@@ -7,7 +7,7 @@
 /* eslint-disable */
 import * as React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import LogoWithText from "./LogoWithText";
+import Logo from "./Logo";
 import { Flex, Image, Text } from "@aws-amplify/ui-react";
 import MyIcon from "./MyIcon";
 export default function NavBarHeader(props) {
@@ -23,23 +23,24 @@ export default function NavBarHeader(props) {
       position="relative"
       boxShadow="0px 2px 6px rgba(0.05098039284348488, 0.10196078568696976, 0.14901961386203766, 0.15000000596046448)"
       padding="24px 32px 24px 32px"
-      backgroundColor="rgba(255,255,255,1)"
+      backgroundColor="rgba(237,231,219,0.5)"
       {...getOverrideProps(overrides, "NavBarHeader")}
       {...rest}
     >
-      <LogoWithText
-        width="127.88px"
-        height="18.91px"
-        display="block"
-        gap="unset"
-        alignItems="unset"
-        justifyContent="unset"
+      <Logo
+        display="flex"
+        gap="10px"
+        direction="column"
+        width="unset"
+        height="unset"
+        justifyContent="flex-start"
+        alignItems="flex-start"
         shrink="0"
         position="relative"
         padding="0px 0px 0px 0px"
         color="brand"
-        {...getOverrideProps(overrides, "LogoWithText")}
-      ></LogoWithText>
+        {...getOverrideProps(overrides, "Logo")}
+      ></Logo>
       <Flex
         gap="40px"
         direction="row"
@@ -55,10 +56,10 @@ export default function NavBarHeader(props) {
         {...getOverrideProps(overrides, "Frame 32129767076")}
       >
         <Text
-          fontFamily="Inter"
-          fontSize="16px"
-          fontWeight="400"
-          color="rgba(92,102,112,1)"
+          fontFamily="IBM Plex Sans"
+          fontSize="24px"
+          fontWeight="700"
+          color="rgba(13,26,38,1)"
           lineHeight="24px"
           textAlign="left"
           display="block"
@@ -72,71 +73,8 @@ export default function NavBarHeader(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children="Dashboard"
-          {...getOverrideProps(overrides, "Dashboard")}
-        ></Text>
-        <Text
-          fontFamily="Inter"
-          fontSize="16px"
-          fontWeight="400"
-          color="rgba(92,102,112,1)"
-          lineHeight="24px"
-          textAlign="left"
-          display="block"
-          direction="column"
-          justifyContent="unset"
-          width="unset"
-          height="unset"
-          gap="unset"
-          alignItems="unset"
-          shrink="0"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          whiteSpace="pre-wrap"
-          children="Jobs"
-          {...getOverrideProps(overrides, "Jobs")}
-        ></Text>
-        <Text
-          fontFamily="Inter"
-          fontSize="16px"
-          fontWeight="400"
-          color="rgba(92,102,112,1)"
-          lineHeight="24px"
-          textAlign="left"
-          display="block"
-          direction="column"
-          justifyContent="unset"
-          width="unset"
-          height="unset"
-          gap="unset"
-          alignItems="unset"
-          shrink="0"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          whiteSpace="pre-wrap"
-          children="Applicants"
-          {...getOverrideProps(overrides, "Applicants")}
-        ></Text>
-        <Text
-          fontFamily="Inter"
-          fontSize="16px"
-          fontWeight="400"
-          color="rgba(92,102,112,1)"
-          lineHeight="24px"
-          textAlign="left"
-          display="block"
-          direction="column"
-          justifyContent="unset"
-          width="unset"
-          height="unset"
-          gap="unset"
-          alignItems="unset"
-          shrink="0"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          whiteSpace="pre-wrap"
-          children="Company"
-          {...getOverrideProps(overrides, "Company")}
+          children="Add Pet"
+          {...getOverrideProps(overrides, "Add Pet")}
         ></Text>
       </Flex>
       <Flex

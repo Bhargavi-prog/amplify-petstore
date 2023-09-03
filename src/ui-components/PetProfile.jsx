@@ -6,13 +6,18 @@
 
 /* eslint-disable */
 import * as React from "react";
+import { Pet } from "../models";
 import {
   getOverrideProps,
+  useDataStoreDeleteAction,
   useNavigateAction,
 } from "@aws-amplify/ui-react/internal";
-import { Button, Flex, Image, Text, View } from "@aws-amplify/ui-react";
+import { schema } from "../models/schema";
+import { Button, Flex, Image, Text } from "@aws-amplify/ui-react";
 export default function PetProfile(props) {
   const { pet, overrides, ...rest } = props;
+  const buttonThreeEightFiveThreeFiveNineEightOnClick =
+    useDataStoreDeleteAction({ id: pet?.id, model: Pet, schema: schema });
   const buttonTwoNineSevenSixSixNineZeroSevenOnClick = useNavigateAction({
     type: "url",
     url: "https://www.google.com",
@@ -21,8 +26,8 @@ export default function PetProfile(props) {
     <Flex
       gap="24px"
       direction="column"
-      width="315px"
-      height="676px"
+      width="317px"
+      height="622px"
       justifyContent="flex-start"
       alignItems="center"
       position="relative"
@@ -41,6 +46,9 @@ export default function PetProfile(props) {
         isDisabled={false}
         variation="link"
         children="Delete"
+        onClick={() => {
+          buttonThreeEightFiveThreeFiveNineEightOnClick();
+        }}
         {...getOverrideProps(overrides, "Button3853598")}
       ></Button>
       <Image
@@ -62,7 +70,7 @@ export default function PetProfile(props) {
         gap="8px"
         direction="column"
         width="unset"
-        height="unset"
+        height="157px"
         justifyContent="flex-start"
         alignItems="center"
         shrink="0"
@@ -157,14 +165,36 @@ export default function PetProfile(props) {
           children={`${"Age: "}${pet?.age}`}
           {...getOverrideProps(overrides, "Age : 23")}
         ></Text>
+        <Text
+          fontFamily="Inter"
+          fontSize="16px"
+          fontWeight="400"
+          color="rgba(48,64,80,1)"
+          lineHeight="24px"
+          textAlign="center"
+          display="block"
+          direction="column"
+          justifyContent="unset"
+          letterSpacing="0.01px"
+          width="unset"
+          height="unset"
+          gap="unset"
+          alignItems="unset"
+          shrink="0"
+          position="relative"
+          padding="0px 0px 0px 0px"
+          whiteSpace="pre-wrap"
+          children={`${"Color:"}${pet?.color}`}
+          {...getOverrideProps(overrides, "Color : Blue")}
+        ></Text>
       </Flex>
-      <View
+      <Flex
+        gap="13px"
+        direction="row"
         width="unset"
-        height="46px"
-        display="block"
-        gap="unset"
-        alignItems="unset"
-        justifyContent="unset"
+        height="unset"
+        justifyContent="flex-start"
+        alignItems="center"
         shrink="0"
         alignSelf="stretch"
         position="relative"
@@ -172,11 +202,11 @@ export default function PetProfile(props) {
         {...getOverrideProps(overrides, "Frame 437")}
       >
         <Button
-          width="270px"
-          height="46px"
-          position="absolute"
-          top="0px"
-          left="0px"
+          width="unset"
+          height="40px"
+          grow="1"
+          shrink="1"
+          basis="0"
           size="large"
           isDisabled={false}
           variation="primary"
@@ -187,18 +217,18 @@ export default function PetProfile(props) {
           {...getOverrideProps(overrides, "Button29766907")}
         ></Button>
         <Button
-          width="270px"
-          height="46px"
-          position="absolute"
-          top="53px"
-          left="0px"
+          width="unset"
+          height="40px"
+          grow="1"
+          shrink="1"
+          basis="0"
           size="large"
           isDisabled={false}
           variation="primary"
           children="Update"
           {...getOverrideProps(overrides, "Button3853556")}
         ></Button>
-      </View>
+      </Flex>
     </Flex>
   );
 }
