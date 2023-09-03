@@ -54,7 +54,7 @@ function App() {
         <Pets 
           overrideItems={({item, index})=> ({
             overrides : {
-              Breed: {color: "blue"},
+              Breed: {color: "grey"},
               Button29766907: {
                 onClick: () => alert(`${item.name}`),
               }
