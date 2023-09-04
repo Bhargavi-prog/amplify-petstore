@@ -6,12 +6,13 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import { getOverrideProps, useAuth } from "@aws-amplify/ui-react/internal";
 import Logo from "./Logo";
 import { Button, Flex, Image, Text } from "@aws-amplify/ui-react";
 import MyIcon from "./MyIcon";
 export default function NavBarHeader(props) {
   const { overrides, ...rest } = props;
+  const authAttributes = useAuth().user?.attributes ?? {};
   return (
     <Flex
       gap="40px"
@@ -136,6 +137,19 @@ export default function NavBarHeader(props) {
           type="notification"
           {...getOverrideProps(overrides, "MyIcon")}
         ></MyIcon>
+      </Flex>
+      <Flex
+        gap="4px"
+        direction="column"
+        width="unset"
+        height="unset"
+        justifyContent="center"
+        alignItems="center"
+        shrink="0"
+        position="relative"
+        padding="0px 0px 0px 0px"
+        {...getOverrideProps(overrides, "Frame 439")}
+      >
         <Image
           width="45px"
           height="45px"
@@ -150,6 +164,27 @@ export default function NavBarHeader(props) {
           objectFit="cover"
           {...getOverrideProps(overrides, "image")}
         ></Image>
+        <Text
+          fontFamily="IBM Plex Sans"
+          fontSize="15px"
+          fontWeight="700"
+          color="rgba(13,26,38,1)"
+          lineHeight="16px"
+          textAlign="left"
+          display="block"
+          direction="column"
+          justifyContent="unset"
+          width="unset"
+          height="unset"
+          gap="unset"
+          alignItems="unset"
+          shrink="0"
+          position="relative"
+          padding="0px 0px 0px 0px"
+          whiteSpace="pre-wrap"
+          children={authAttributes["name"]}
+          {...getOverrideProps(overrides, "Name")}
+        ></Text>
       </Flex>
     </Flex>
   );

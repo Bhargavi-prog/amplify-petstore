@@ -4,9 +4,13 @@ import {  Pets  } from './ui-components';
 import {  NavBarHeader  } from './ui-components';
 import {  MarketingFooterBrand  } from './ui-components';
 import {  AddPet  } from './ui-components';
-import { Alert } from '@aws-amplify/ui-react';
+//import { Alert } from '@aws-amplify/ui-react';
+import { withAuthenticator } from '@aws-amplify/ui-react';
+
+
  
-function App() {
+function App({user, signOut}) {
+
   const [showForm, setShowForm] = useState(false);
   const formOverride = {
     MyIcon: {
@@ -21,7 +25,8 @@ function App() {
   }
   const navbarOverrides = {
     "image"  : {
-      src: "https://img.icons8.com/color/50/000000/cat",
+      //src: "https://img.icons8.com/color/50/000000/cat",
+      src: user?.attributes?.profile
     },
     "Add Pet" : {
       style: {
@@ -37,10 +42,14 @@ function App() {
           cursor : "pointer",
         },
         onClick: () => {
-          Alert("Delete")
+          alert("Delete")
         },
     },
+    "Button" : {
+        onClick: signOut,
+        },
   }
+  
   return (
     <div className="App">
       <NavBarHeader width={"100%"} overrides={navbarOverrides} />
@@ -77,4 +86,4 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthenticator(App);
