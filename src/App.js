@@ -29,7 +29,6 @@ function App({ user, signOut }) {
         h: 2,
         minW: 1,
         maxW: 2,
-        static: false,
       },
     ];
     return defaultLayout;
@@ -38,10 +37,13 @@ function App({ user, signOut }) {
     console.log("Handle onLayoutChange..."); // DEBUG
     setLayout(layout);
 
-    const layoutJsonData = JSON.stringify(layout);
+    // const layoutJsonData = JSON.stringify(layout);
 
     console.log("DOM was here...");
     console.log(layout);
+    layout.forEach((element) => {
+      delete element.static;
+    });
 
     axios
       .put(
