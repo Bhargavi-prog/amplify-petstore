@@ -61,11 +61,11 @@ function App({ user, signOut }) {
       });
   }
 
-  // const onConnecting = useCallback(() => {
-  //   console.log("-bhagitest----onConnecting-callback-----");
-  // }, []);
+  const onConnecting = useCallback(() => {
+    console.log("-----onConnecting-callback-----");
+  }, []);
 
-  // useConnecting(onConnecting);
+  useConnecting(onConnecting);
 
   const formOverride = {
     MyIcon: {
