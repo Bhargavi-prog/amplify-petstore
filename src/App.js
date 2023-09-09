@@ -10,7 +10,7 @@ import ConnectCCP from "./ConnectCCP";
 // import GridLayout from "react-grid-layout";
 import RGL, { WidthProvider } from "react-grid-layout";
 import axios from "axios";
-// import { acceptCall, useConnecting } from "./contact-events-hooks";
+import { acceptCall, useConnecting } from "./contact-events-hooks";
 
 const ReactGridLayout = WidthProvider(RGL);
 
@@ -28,7 +28,7 @@ function App({ user, signOut }) {
         w: 10,
         h: 2,
         minW: 1,
-        maxW: 2,
+        maxW: 10,
       },
     ];
     return defaultLayout;
@@ -36,19 +36,15 @@ function App({ user, signOut }) {
   function handleOnLayoutChange(layout) {
     console.log("Handle onLayoutChange..."); // DEBUG
     setLayout(layout);
-
-    // const layoutJsonData = JSON.stringify(layout);
+    const layoutJsonData = JSON.stringify(layout);
 
     console.log("DOM was here...");
     console.log(layout);
-    layout.forEach((element) => {
-      delete element.static;
-    });
 
     axios
-      .put(
-        "https://hle6x9x42l.execute-api.eu-west-2.amazonaws.com/dev/users/USER#2/grids",
-        layoutJsonData,
+      .post(
+        "https://hle6x9x42l.execute-api.eu-west-2.amazonaws.com/dev/admin/USER233/grids/set",
+        layout[0],
         {
           headers: {
             "Content-Type": "application/json",
@@ -91,8 +87,8 @@ function App({ user, signOut }) {
         cursor: "pointer",
       },
       onClick: () => {
-        // acceptCall();
-        setShowForm(!showForm);
+        acceptCall();
+        // setShowForm(!showForm);
       },
     },
 
